@@ -9,7 +9,7 @@ on:
 
 # Environment variables shared across all jobs
 env:
-  ECR_REPOSITORY: cicd-sample-app         # your ECR repo name
+  ECR_REPOSITORY: samle-test         # your ECR repo name
   AWS_REGION: ${{ secrets.AWS_REGION }}   # e.g. ap-south-1
 
 jobs:
@@ -28,8 +28,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "npm"
-          cache-dependency-path: app/package-lock.json
 
       - name: Install dependencies
         working-directory: app
