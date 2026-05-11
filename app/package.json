@@ -1,0 +1,18 @@
+{
+  "name": "cicd-sample-app",
+  "version": "1.0.0",
+  "description": "Sample Node.js app for CI/CD with GitHub Actions + Docker + AWS ECR",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest --forceExit"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  }
+}
