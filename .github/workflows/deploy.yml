@@ -83,7 +83,7 @@ jobs:
               sudo docker login --username AWS --password-stdin \
               ${{ secrets.ECR_REGISTRY }}
 
-            sudo docker pull ${{ secrets.ECR_REGISTRY }}/samle-test/cicd-sample-app:latest
+            sudo docker pull ${{ secrets.ECR_REGISTRY }}/samle-test:latest
 
             sudo docker stop cicd-sample-app || true
             sudo docker rm   cicd-sample-app || true
@@ -94,8 +94,8 @@ jobs:
               -p 80:3000 \
               -e NODE_ENV=production \
               -e APP_VERSION=${{ github.sha }} \
-              ${{ secrets.ECR_REGISTRY }}/samle-test/cicd-sample-app:latest
+              ${{ secrets.ECR_REGISTRY }}/samle-test:latest
 
             sleep 5
-            sudo docker ps | grep cicd-sample-app
+            sudo docker ps | grep cicd-sample
             echo "✅ Deploy successful"
