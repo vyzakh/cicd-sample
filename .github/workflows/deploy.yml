@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 env:
-  ECR_REPOSITORY: samle-test/cicd-sample-app
+  ECR_REPOSITORY: samle-test
   AWS_REGION: ${{ secrets.AWS_REGION }}
 
 jobs:
